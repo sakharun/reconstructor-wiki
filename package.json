@@ -1,5 +1,6 @@
 {
   "name": "reconstructor-wiki",
+  "homepage": "https://sakharun.github.io/reconstructor-wiki",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -7,12 +8,15 @@
     "content": "node scripts/build-content.mjs",
     "dev": "npm run content && vite",
     "build": "npm run content && tsc --noEmit && vite build && node scripts/postbuild.mjs",
-    "preview": "vite preview"
+    "preview": "vite preview",   
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@fontsource/inter": "^5.1.1",
     "@fontsource/literata": "^5.1.1",
     "d3-force": "^3.0.0",
+    "gh-pages": "^6.3.0",
     "minisearch": "^7.1.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -28,7 +32,6 @@
     "@vitejs/plugin-react": "^4.3.4",
     "markdown-it": "^14.1.0",
     "tailwindcss": "^4.0.0",
-    "typescript": "^5.7.2",
     "vite": "^6.0.7"
   }
 }
